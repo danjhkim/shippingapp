@@ -1,0 +1,94 @@
+.sentTable {
+	width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	table-layout: fixed;
+
+	th {
+		text-align: left;
+		font-weight: bold;
+		padding: 8px;
+		font: normal normal normal 10px/11px Arial;
+		letter-spacing: 0px;
+		color: #444444;
+		max-width: 210px;
+		width: 100%;
+		cursor: pointer;
+
+		&:hover {
+			color: #777;
+			text-decoration: underline;
+		}
+
+		&:active {
+			color: #333;
+			text-decoration: none;
+			transform: scale(0.95);
+		}
+	}
+
+	td {
+		padding: 8px;
+		font: normal normal normal 14px/19px Open Sans;
+		color: #333333;
+		opacity: 1;
+	}
+
+	td:last-child {
+		text-align: center;
+	}
+
+	tr {
+		border: 1px solid #d8d8d8;
+	}
+
+	tr:nth-child(even) {
+		background-color: #f2f2f2;
+	}
+
+	@import 'ButtonEffects';
+
+	button {
+		background: #7d869a 0% 0% no-repeat padding-box;
+		color: white;
+		border: none;
+		padding: 8px 12px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 14px;
+		margin: 4px 2px;
+		cursor: pointer;
+		border-radius: 4px;
+		font: normal normal normal 12px/14px Arial;
+		@include buttonEffect();
+	}
+}
+
+.dateTime {
+	div:first-child {
+		margin-bottom: 6px;
+		font: normal normal normal 16px/22px Open Sans;
+	}
+}
+
+.subject {
+	div:first-child {
+		margin-bottom: 6px;
+		font: normal normal normal 16px/22px Open Sans;
+	}
+}
+
+.emailTable {
+	flex: 1;
+	font: normal normal normal 21px/28px Open Sans;
+	color: #cccccc;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 200px;
+}
