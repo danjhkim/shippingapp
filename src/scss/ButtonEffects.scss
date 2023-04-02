@@ -1,0 +1,15 @@
+@mixin buttonEffect {
+	transition-duration: 0.3s;
+	transition-property: transform, box-shadow;
+
+	&:hover {
+		background-color: #5c5c5c;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+	}
+
+	&:active {
+		background-color: #4c4c4c;
+		transform: translateY(1px);
+		box-shadow: none;
+	}
+}

@@ -1,0 +1,181 @@
+.profileStats {
+	display: flex;
+	margin: 0.438em 0 0.438em 0;
+}
+
+.base-block {
+	background: #edf5ff 0% 0% no-repeat padding-box;
+	margin: 0 0.313em 0 0;
+}
+
+// profile pic section
+.profilePic {
+	width: 97px;
+	height: 125px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	@extend .base-block;
+}
+
+.innerFrame {
+	width: 63px;
+	height: 72px;
+}
+
+.profileIcon {
+	font-size: 4.3rem;
+}
+
+.sexAge {
+	margin-top: 10px;
+	font: normal normal normal 10px/11px Arial;
+	letter-spacing: 0px;
+	color: #333333;
+}
+
+//user info section
+@mixin common-styles {
+	margin-right: 12px;
+}
+
+.userInfo {
+	width: 239px;
+	height: 125px;
+	padding: 11px 12px;
+	@extend .base-block;
+	box-sizing: border-box;
+	border: none;
+}
+
+.userInfo div {
+	display: flex;
+	margin-bottom: 2px;
+}
+
+.data {
+	text-align: left;
+	font: normal normal normal 12px/17px Open Sans;
+	color: #333333;
+	text-decoration: none;
+	&:hover {
+		font-weight: bold;
+	}
+	transition-duration: 0.2s;
+}
+
+.cell {
+	font: normal normal normal 14px/21px Myriad Pro;
+}
+
+.icon {
+	width: 12px;
+	height: 14px;
+	font: normal normal 300 14px/17px Font Awesome 5 Pro;
+	color: #b0c6d8;
+	@include common-styles;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.activity {
+	width: 559px;
+	height: 125px;
+	margin: 0 0.313em 0 0;
+}
+
+.dayHeader {
+	width: 559px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: left;
+	font: normal normal normal 12px/17px Open Sans;
+	color: #333333;
+	background: #edf5ff 0% 0% no-repeat padding-box;
+}
+
+.activityStatBar {
+	display: flex;
+}
+
+.statBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 185px;
+	height: 95px;
+	background: #edf5ff 0% 0% no-repeat padding-box;
+
+	&:first-of-type {
+		margin-right: 2px;
+	}
+	&:last-of-type {
+		margin-left: 2px;
+	}
+}
+
+.statBox * {
+	&:nth-child(1) {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&:last-child {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.statNumber {
+	text-align: center;
+	font: normal normal 600 50px/68px Open Sans;
+	color: #333333;
+}
+
+.bottomBar {
+	height: 24px;
+	width: 100%;
+	background: #d5dce5 0% 0% no-repeat padding-box;
+}
+
+.bottomText {
+	font: normal normal 600 10px/14px Open Sans;
+	color: #333333;
+}
+
+.smsBox {
+	width: 225px;
+	height: 125px;
+	background: #edffed 0% 0% no-repeat padding-box;
+}
+
+.smsHeader {
+	width: 225;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: left;
+	font: normal normal normal 12px/17px Open Sans;
+	color: #333333;
+	background: #edffed 0% 0% no-repeat padding-box;
+}
+
+.smsBoxOverRide {
+	width: 100%;
+	background: #edffed 0% 0% no-repeat padding-box;
+}
+
+.smsBottomBarOverRide {
+	background: #d5e5d5 0% 0% no-repeat padding-box;
+}
