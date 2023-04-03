@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 export const statsApi = axios.create({
-	baseURL: 'https://evoteam-verasoft.github.io/data/',
+	baseURL: apiUrl,
 });
 
 export const getOrdersData = async () => {

@@ -1,6 +1,7 @@
 .profileStats {
 	display: flex;
 	margin: 0.438em 0 0.438em 0;
+	width: 100%;
 }
 
 .base-block {
@@ -10,8 +11,9 @@
 
 // profile pic section
 .profilePic {
-	width: 97px;
-	height: 125px;
+	max-width: 6.063rem;
+	width: 100%;
+	min-height: 7.813rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -20,8 +22,8 @@
 }
 
 .innerFrame {
-	width: 63px;
-	height: 72px;
+	width: 3.938rem;
+	height: 4.5rem;
 }
 
 .profileIcon {
@@ -37,19 +39,35 @@
 
 //user info section
 @mixin common-styles {
-	margin-right: 12px;
+	margin-right: 0.75rem;
 }
 
 .userInfo {
-	width: 239px;
-	height: 125px;
-	padding: 11px 12px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 14.938rem;
+	width: 100%;
+	min-height: 7.813rem;
+	height: 100%;
+}
+
+.userInfoSub {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 100%;
+	height: 100%;
+
+	padding: 0.688rem 0.75rem;
 	@extend .base-block;
 	box-sizing: border-box;
 	border: none;
 }
 
-.userInfo div {
+.userInfoSub div {
 	display: flex;
 	margin-bottom: 2px;
 }
@@ -70,8 +88,8 @@
 }
 
 .icon {
-	width: 12px;
-	height: 14px;
+	width: 0.75rem;
+	height: 0.875rem;
 	font: normal normal 300 14px/17px Font Awesome 5 Pro;
 	color: #b0c6d8;
 	@include common-styles;
@@ -82,14 +100,19 @@
 }
 
 .activity {
-	width: 559px;
-	height: 125px;
+	display: flex;
+	flex-direction: column;
+	max-width: 34.938rem;
+	width: 100%;
+	height: 100%;
+	min-height: 7.813rem;
 	margin: 0 0.313em 0 0;
 }
 
 .dayHeader {
-	width: 559px;
-	height: 30px;
+	max-width: 34.938rem;
+	width: 100%;
+	min-height: 1.875rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -101,6 +124,7 @@
 
 .activityStatBar {
 	display: flex;
+	width: 100%;
 }
 
 .statBox {
@@ -108,8 +132,8 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 185px;
-	height: 95px;
+	width: 100%;
+	min-height: 5.938rem;
 	background: #edf5ff 0% 0% no-repeat padding-box;
 
 	&:first-of-type {
@@ -143,7 +167,7 @@
 }
 
 .bottomBar {
-	height: 24px;
+	min-height: 24px;
 	width: 100%;
 	background: #d5dce5 0% 0% no-repeat padding-box;
 }
@@ -154,14 +178,16 @@
 }
 
 .smsBox {
-	width: 225px;
-	height: 125px;
+	max-width: 14.063rem;
+	width: 100%;
+	min-height: 7.813rem;
+	height: 100%;
 	background: #edffed 0% 0% no-repeat padding-box;
 }
 
 .smsHeader {
-	width: 225;
-	height: 30px;
+	width: 100%;
+	min-height: 1.875rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -171,11 +197,92 @@
 	background: #edffed 0% 0% no-repeat padding-box;
 }
 
-.smsBoxOverRide {
+.activityStatBar .smsBoxOverRide {
 	width: 100%;
 	background: #edffed 0% 0% no-repeat padding-box;
+	margin-right: 0px;
+	margin-left: 0px;
 }
 
-.smsBottomBarOverRide {
+.statBox .smsBottomBarOverRide {
 	background: #d5e5d5 0% 0% no-repeat padding-box;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+// media queries
+
+@media (max-width: 48.75rem) {
+	.profileStats {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.base-block {
+		margin-bottom: 0.313em;
+	}
+
+	.profilePic {
+		max-width: 40%;
+		width: 100%;
+	}
+
+	.userInfo {
+		max-width: 58%;
+		width: 100%;
+		margin-bottom: 0.313em;
+	}
+
+	.userInfoSub {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.activity {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.dayHeader {
+		max-width: 100%;
+	}
+
+	.statBox {
+		width: 100%;
+		height: 100%;
+
+		&:first-of-type {
+			margin-right: 1px;
+		}
+		&:last-of-type {
+			margin-left: 1px;
+		}
+	}
+
+	.smsBox {
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 33rem) {
+	.profilePic {
+		max-width: 100%;
+	}
+
+	.userInfo {
+		max-width: 100%;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.userInfoSub {
+		text-align: left;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }

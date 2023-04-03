@@ -121,7 +121,7 @@ const EmailTable: FC<EmailTableProps> = ({ data }) => {
 								tabIndex={0}>
 								SUBJECT
 							</th>
-							<th />
+							<th className='invisBlock' />
 							<th
 								onClick={() => handleSort('communicationType')}
 								onKeyDown={event =>

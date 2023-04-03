@@ -1,6 +1,7 @@
 .navBar {
-	width: 1135px;
-	height: 81px;
+	max-width: 70.938rem;
+	width: 100%;
+	min-height: 5.063rem;
 	background: #f2f2f2 0% 0% no-repeat padding-box;
 	border-top: 1px solid #d4d4d4;
 	border-bottom: 2px solid #4d4d4d;
@@ -10,6 +11,8 @@
 
 	nav {
 		display: flex;
+		width: 100%;
+		justify-content: center;
 	}
 }
 
@@ -20,10 +23,11 @@
 	font: normal normal bold 12px/14px Arial;
 	color: #3a3a3a;
 	text-decoration: none;
-	width: 165px;
-	height: 40px;
+	max-width: 10.313rem;
+	width: 100%;
+	min-height: 2.5rem;
 	background: #d2d2d2 0% 0% no-repeat padding-box;
-	margin-right: 2px;
+	margin-right: 0.125rem;
 	transition-duration: 0.2s;
 
 	&:last-child {
@@ -43,4 +47,17 @@
 .active {
 	background: #3a3a3a 0% 0% no-repeat padding-box;
 	color: #ffffff;
+}
+
+@media (max-width: 27.375rem) {
+	.navBar {
+		nav {
+			flex-direction: column;
+			max-width: 100%;
+
+			.navLink {
+				max-width: 100%;
+			}
+		}
+	}
 }

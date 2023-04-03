@@ -10,11 +10,11 @@ table {
 	th {
 		text-align: left;
 		font-weight: bold;
-		padding: 8px;
+		padding: 0.625rem;
 		font: normal normal normal 10px/11px Arial;
 		letter-spacing: 0px;
 		color: #444444;
-		max-width: 210px;
+		max-width: 13.125rem;
 		width: 100%;
 		cursor: pointer;
 
@@ -31,7 +31,7 @@ table {
 	}
 
 	td {
-		padding: 8px;
+		padding: 0.5rem;
 		font: normal normal normal 14px/19px Open Sans;
 		color: #333333;
 		opacity: 1;
@@ -39,7 +39,7 @@ table {
 	}
 
 	.long-text {
-		max-width: 400px;
+		max-width: 25rem;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
@@ -62,7 +62,7 @@ table {
 	}
 
 	.long-text td {
-		min-width: 400px;
+		min-width: 25rem;
 	}
 
 	td:last-child {
@@ -83,14 +83,14 @@ table {
 		background: #7d869a 0% 0% no-repeat padding-box;
 		color: white;
 		border: none;
-		padding: 8px 12px;
+		padding: 0.5rem 0.75rem;
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;
-		font-size: 14px;
-		margin: 4px 2px;
+		font-size: 0.875rem;
+		margin: 0.25rem 0.125rem;
 		cursor: pointer;
-		border-radius: 4px;
+		border-radius: 0.25rem;
 		font: normal normal normal 12px/14px Arial;
 		@include buttonEffect();
 	}
@@ -98,7 +98,7 @@ table {
 
 .dateTime {
 	div:first-child {
-		margin-bottom: 6px;
+		margin-bottom: 0.375rem;
 		font: normal normal normal 16px/22px Open Sans;
 	}
 }
@@ -109,7 +109,7 @@ table {
 
 .subjectors {
 	div:first-child {
-		margin-bottom: 6px;
+		margin-bottom: 0.375rem;
 
 		font: normal normal normal 16px/22px Open Sans;
 	}
@@ -126,5 +126,24 @@ table {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 200px;
+	min-height: 12.5rem;
+}
+
+@media (max-width: 38.75rem) {
+	.invisBlock {
+		width: 10%;
+	}
+
+	table {
+		th {
+			font-weight: 400;
+			font-size: 0.5rem;
+		}
+
+		td {
+			button {
+				font-size: 0.5rem;
+			}
+		}
+	}
 }
