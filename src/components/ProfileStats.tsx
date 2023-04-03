@@ -21,7 +21,7 @@ const ProfileStats: FC = () => {
 		// setTimeout(() => {
 		// 	setData(null);
 		// }, 1000);
-	}, [dispatch, realData]);
+	}, [dispatch]);
 
 	if (!realData) {
 		return <ProfileStatsSkeleton />;
