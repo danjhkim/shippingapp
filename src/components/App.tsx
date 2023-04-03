@@ -1,10 +1,5 @@
 import { FC } from 'react';
-import {
-	BrowserRouter as Browser,
-	Route,
-	Routes,
-	useRoutes,
-} from 'react-router-dom';
+import { BrowserRouter as Browser, Route, Routes } from 'react-router-dom';
 import '../scss/App.scss';
 import Header from './Header';
 import ProfileStats from './ProfileStats';
@@ -24,12 +19,12 @@ const App: FC = () => {
 					<ProfileStats />
 					<NavBar />
 					<Routes>
-						<Route path='/' element={<OrdersA />} />
 						<Route path='/A' element={<OrdersA />} />
 						<Route path='/AA' element={<OrdersAA />} />
 						<Route path='/AAA' element={<OrdersAAA />} />
 						<Route path='/B' element={<OrdersB />} />
 						<Route path='/C' element={<OrdersC />} />
+						<Route path='/*' element={<OrdersA />} />
 					</Routes>
 				</Browser>
 			</div>

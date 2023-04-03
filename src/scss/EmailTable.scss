@@ -35,6 +35,34 @@ table {
 		font: normal normal normal 14px/19px Open Sans;
 		color: #333333;
 		opacity: 1;
+		word-break: break-word;
+	}
+
+	.long-text {
+		max-width: 400px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		cursor: pointer;
+
+		div {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		&.expanded {
+			white-space: normal;
+			word-break: break-word;
+
+			div {
+				white-space: normal;
+			}
+		}
+	}
+
+	.long-text td {
+		min-width: 400px;
 	}
 
 	td:last-child {
@@ -76,9 +104,17 @@ table {
 }
 
 .subject {
+	position: relative;
+}
+
+.subjectors {
 	div:first-child {
 		margin-bottom: 6px;
+
 		font: normal normal normal 16px/22px Open Sans;
+	}
+	div:last-child {
+		font: normal normal normal 14px/19px Open Sans;
 	}
 }
 

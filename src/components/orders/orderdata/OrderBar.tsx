@@ -1,12 +1,16 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import '../../../scss/OrderData.scss';
 import { OrderBarProps } from '../../../types/OrderTypes';
+import { useAppDispatch } from '../../../hooks';
 
 const OrderBar: FC<OrderBarProps> = ({ page, setPage }) => {
+	const dispatch = useAppDispatch();
+
 	const handleClick = (e: React.MouseEvent<HTMLSpanElement>) => {
 		e.preventDefault();
 		const page = parseInt(e.currentTarget.dataset.page as string);
 		setPage(page);
+		dispatch({ type: 'orders/fetchOrders' }); // dispatch action to trigger fetchOrdersSaga in redux-saga
 	};
 
 	const handleKeyDown = (e: React.KeyboardEvent<HTMLSpanElement>) => {
@@ -14,8 +18,13 @@ const OrderBar: FC<OrderBarProps> = ({ page, setPage }) => {
 			e.preventDefault();
 			const page = parseInt(e.currentTarget.dataset.page as string);
 			setPage(page);
+			dispatch({ type: 'orders/fetchOrders' }); // dispatch action to trigger fetchOrdersSaga in redux-saga
 		}
 	};
+
+	useEffect(() => {
+		dispatch({ type: 'orders/fetchOrders' });
+	}, [dispatch]);
 
 	return (
 		<div>

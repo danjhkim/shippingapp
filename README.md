@@ -1,33 +1,28 @@
-# Getting Started with Create React App
+# Shipping and Package APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+My React App is a web application built with React, SCSS, Redux Toolkit, and Redux Saga. The app tracks user profiles and displays information about their orders. The application is fully typed with TypeScript and uses Axios for making API calls to the backend server.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+To install My React App, you can clone the repository and install the necessary dependencies by running:
 
-### `npm start`
+npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Usage
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You can run My React App by running:
 
-### `npm test`
+npm run start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This will start the application on http://localhost:3000.
 
-### `npm run build`
+### Build
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can also build the application by running:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm run build
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This will create a production-ready build in the build directory.
 
 ### `npm run eject`
 
@@ -39,8 +34,11 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Modularized and organized code structure
+Multiple loading screens, spinners, dot loading, and skeleton loading screens
+Custom hover effects
+Uses Redux Toolkit and Redux Saga for state management and side effects
+Fully typed with TypeScript
+Makes API calls to a backend server using Axios and Saga

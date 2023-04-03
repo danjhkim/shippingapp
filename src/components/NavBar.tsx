@@ -1,50 +1,32 @@
 import { FC } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import '../scss/NavBar.scss';
+import { CustomNavLinkProps } from '../types/NavBarTypes';
+
+const CustomNavLink: FC<CustomNavLinkProps> = ({
+	to,
+	defaultActive,
+	...rest
+}) => {
+	const { pathname } = useLocation();
+	const isActive = pathname === to || (defaultActive && pathname === '/');
+	const className = `${isActive ? 'active' : ''} navLink`;
+	return <NavLink {...rest} to={to} className={className} />;
+};
 
 const NavBar: FC = () => {
 	return (
-		<>
-			<div className='navBar'>
-				<nav>
-					<NavLink
-						to='/A'
-						className={({ isActive }) =>
-							`${isActive ? 'active' : ''} navLink`
-						}>
-						Orders A
-					</NavLink>
-					<NavLink
-						to='/AA'
-						className={({ isActive }) =>
-							`${isActive ? 'active' : ''} navLink`
-						}>
-						Orders AA
-					</NavLink>
-					<NavLink
-						to='/AAA'
-						className={({ isActive }) =>
-							`${isActive ? 'active' : ''} navLink`
-						}>
-						Orders AAA
-					</NavLink>
-					<NavLink
-						to='/B'
-						className={({ isActive }) =>
-							`${isActive ? 'active' : ''} navLink`
-						}>
-						Orders B
-					</NavLink>
-					<NavLink
-						to='/C'
-						className={({ isActive }) =>
-							`${isActive ? 'active' : ''} navLink`
-						}>
-						Orders C
-					</NavLink>
-				</nav>
-			</div>
-		</>
+		<div className='navBar'>
+			<nav>
+				<CustomNavLink to='/A' defaultActive>
+					Orders A
+				</CustomNavLink>
+				<CustomNavLink to='/AA'>Orders AA</CustomNavLink>
+				<CustomNavLink to='/AAA'>Orders AAA</CustomNavLink>
+				<CustomNavLink to='/B'>Orders B</CustomNavLink>
+				<CustomNavLink to='/C'>Orders C</CustomNavLink>
+			</nav>
+		</div>
 	);
 };
 

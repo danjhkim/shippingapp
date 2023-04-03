@@ -1,9 +1,22 @@
 import { configureStore } from '@reduxjs/toolkit';
+import createSagaMiddleware from 'redux-saga';
 import { setupListeners } from '@reduxjs/toolkit/query';
+import ordersReducer from './slices/ordersSlice';
+import summaryReducer from './slices/summarySlice';
+import rootSaga from './rootSaga'; // Import your rootSaga
+
+const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
-	reducer: {},
+	reducer: {
+		ordersReducer,
+		summaryReducer,
+	},
+	middleware: getDefaultMiddleware =>
+		getDefaultMiddleware({ thunk: false }).concat(sagaMiddleware),
 });
+
+sagaMiddleware.run(rootSaga);
 
 setupListeners(store.dispatch);
 

@@ -1,30 +1,54 @@
-import React, { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import '../scss/ProfileStats.scss';
 import ContactInfo from './profilebar/ContactInfo';
 import ActivityInfo from './profilebar/ActivityInfo';
 import Sms from './profilebar/Sms';
 import personData from '../api/fakedata/header.json';
 import { calculateAge } from '../utils/ageConverter';
+import { useAppDispatch, useAppSelector } from '../hooks';
+import ProfileStatsSkeleton from './cssloader/HeaderSkeleton';
+import { User } from '../types/OrderTypes';
 
 const ProfileStats: FC = () => {
 	const age = calculateAge(personData.birth_date);
+	const dispatch = useAppDispatch();
+	const [data, setData] = useState<User | null>();
+	const realData = useAppSelector(state => state.summaryReducer.summaryData);
 
-	return (
-		<div className='profileStats'>
-			<div className='profilePic'>
-				<div className='innerFrame'>
-					<i
-						className='fa-user fal profileIcon'
-						style={{ color: '#ffffff' }}
-					/>
+	useEffect(() => {
+		dispatch({ type: 'summary/fetchSummary' });
+		//! emulate failed api call to see skeleton loading
+		// uncomment setTimeOut and comment setData(realData);
+
+		setData(realData);
+
+		// setTimeout(() => {
+		// 	setData(null);
+		// }, 1000);
+	}, [dispatch, realData]);
+
+	console.log(data);
+
+	if (!data) {
+		return <ProfileStatsSkeleton />;
+	} else {
+		return (
+			<div className='profileStats'>
+				<div className='profilePic'>
+					<div className='innerFrame'>
+						<i
+							className='fa-user fal profileIcon'
+							style={{ color: '#ffffff' }}
+						/>
+					</div>
+					<div className='sexAge'>{`${data.gender.toUpperCase()} ${age}`}</div>
 				</div>
-				<div className='sexAge'>{`${personData.gender.toUpperCase()} ${age}`}</div>
+				<ContactInfo />
+				<ActivityInfo />
+				<Sms />
 			</div>
-			<ContactInfo />
-			<ActivityInfo />
-			<Sms />
-		</div>
-	);
+		);
+	}
 };
 
 export default ProfileStats;

@@ -1,4 +1,4 @@
-import React, { FC, useState, KeyboardEvent, useEffect } from 'react';
+import React, { FC, useState, KeyboardEvent } from 'react';
 import '../scss/Header.scss';
 import personData from '../api/fakedata/header.json';
 import FullScreenLoader from './cssloader/FullscreenLoader';
@@ -46,7 +46,8 @@ const Header: FC = () => {
 				<button
 					className='orderButton'
 					type='button'
-					onClick={() => setIsOpen(true)}>
+					onClick={() => setIsOpen(true)}
+					tabIndex={0}>
 					<span className='orderFont'>New Order</span>
 				</button>
 			</header>
