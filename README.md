@@ -2,6 +2,12 @@
 
 My React App is a web application built with React, SCSS, Redux Toolkit, and Redux Saga. The app tracks user profiles and displays information about their orders. The application is fully typed with TypeScript and uses Axios for making API calls to the backend server.
 
+## Node Version
+
+**Note: If you get errors, please ensure you are using a compatible version of node. You can download nvm to change node versions**
+
+Works with node v18.14.2
+
 ## Installation
 
 To install My React App, you can clone the repository and install the necessary dependencies by running:
