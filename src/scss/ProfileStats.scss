@@ -2,6 +2,7 @@
 	display: flex;
 	margin: 0.438em 0 0.438em 0;
 	width: 100%;
+	justify-content: center;
 }
 
 .base-block {
@@ -51,6 +52,7 @@
 	width: 100%;
 	min-height: 7.813rem;
 	height: 100%;
+	@extend .base-block;
 }
 
 .userInfoSub {
@@ -62,7 +64,6 @@
 	height: 100%;
 
 	padding: 0.688rem 0.75rem;
-	@extend .base-block;
 	box-sizing: border-box;
 	border: none;
 }
