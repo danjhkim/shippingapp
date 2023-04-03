@@ -24,7 +24,7 @@ npm run build
 
 This will create a production-ready build in the build directory.
 
-### `npm run eject`
+### npm run eject
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
