@@ -36,9 +36,9 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Features
 
-Modularized and organized code structure
-Multiple loading screens, spinners, dot loading, and skeleton loading screens
-Custom hover effects
-Uses Redux Toolkit and Redux Saga for state management and side effects
-Fully typed with TypeScript
-Makes API calls to a backend server using Axios and Saga
+1. Modularized and organized code structure
+2. Multiple loading screens, spinners, dot loading, and skeleton loading screens
+3. Custom hover effects
+4. Uses Redux Toolkit and Redux Saga for state management and side effects
+5. Fully typed with TypeScript
+6. Makes API calls to a backend server using Axios and Saga
